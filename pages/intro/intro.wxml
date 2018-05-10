@@ -1,0 +1,2 @@
+ <image class="img" mode="scaleToFill" src="/images/down.jpg" style="height:{{secheight}}px;width:{{secwidth}}px"></image>
+ <view class="wVidio" bindtap="jumpToVideo">观看视频</view>
