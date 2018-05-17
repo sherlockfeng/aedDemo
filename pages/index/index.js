@@ -80,7 +80,7 @@ Page({
           distance > 50 && (needFlase = true)
         }
         if(needFlase) {
-          let city = ''
+          let city = '上海'
           let name = '当前位置'
           let desc = '当前位置'
           this.setData({
@@ -215,14 +215,14 @@ Page({
     // 终点
     let { latitude: latitude2, longitude: longitude2 } = markers[markerId]
     clearInterval(inId)
-    wx.openLocation({
-      latitude: +latitude2,
-      longitude: +longitude2,
-      name,
-      address: desc
-    });
-    // let url = `/pages/routes/routes?longitude=${longitude}&latitude=${latitude}&longitude2=${longitude2}&latitude2=${latitude2}&city=${city}&name=${name}&desc=${desc}`;
-    // wx.navigateTo({ url });
+    // wx.openLocation({
+    //   latitude: +latitude2,
+    //   longitude: +longitude2,
+    //   name,
+    //   address: desc
+    // });
+    let url = `/pages/routes/routes?longitude=${longitude}&latitude=${latitude}&longitude2=${longitude2}&latitude2=${latitude2}&city=${city}&name=${name}&desc=${desc}`;
+    wx.navigateTo({ url });
   },
   clickcontrol(e) {
     console.log(e)
