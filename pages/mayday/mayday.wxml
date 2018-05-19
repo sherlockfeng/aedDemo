@@ -1,0 +1,26 @@
+<view class="weui-form-preview panel">
+  <block wx:for="{{list}}" wx:key='{index}'>
+    <view class="weui-form-preview__bd">
+        <view class="weui-form-preview__item">
+            <view class="weui-form-preview__label">时间</view>
+            <view class="weui-form-preview__value">{{item.updatetime}}</view>
+        </view>
+        <view class="weui-form-preview__item">
+            <view class="weui-form-preview__label">地点</view>
+            <view class="weui-form-preview__value">{{item.address}}</view>
+        </view>
+        <view class="weui-form-preview__item">
+            <view class="weui-form-preview__label">描述</view>
+            <view class="weui-form-preview__value">{{item.dec}}</view>
+        </view>
+        <view class="weui-form-preview__item">
+            <view class="weui-form-preview__label">求救人</view>
+            <view class="weui-form-preview__value">{{item.phone}}</view>
+        </view>
+    </view>
+    <view class="weui-form-preview__ft">
+        <navigator url="" class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active">响应</navigator>
+    </view>
+    <view class='line'></view>
+  </block>
+</view>

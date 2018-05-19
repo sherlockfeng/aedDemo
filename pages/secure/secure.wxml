@@ -1,0 +1,43 @@
+<view class="section">
+  <view class="client">现场情况简要描述</view>
+  <form bindsubmit="bindFormSubmit">
+    <textarea class="dec" placeholder="1:患者性别;2:患者年龄:(估计);3:目前状况:(意识,呼吸,心跳,外伤)" name="textarea"/>
+    <view class="page__bd">
+        <view class="weui-cells">
+            <view class="weui-cell">
+                <view class="weui-cell__bd">
+                    <view class="weui-uploader">
+                        <view class="weui-uploader__hd">
+                            <view class="weui-uploader__title">现场照片</view>
+                            <view class="weui-uploader__info">{{files.length}}/3</view>
+                        </view>
+                        <view class="weui-uploader__bd">
+                            <view class="weui-uploader__files" id="uploaderFiles">
+                                <block wx:for="{{files}}" wx:key='{index}'>
+                                    <view class="weui-uploader__file img" bindtap="previewImage" id="{{item}}">
+                                        <image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
+                                        <icon catchtap="deleteImg" data-index='{{index}}' type="cancel" class="delete" size="23"></icon>
+                                    </view>
+                                </block>
+                            </view>
+                            <view class="weui-uploader__input-box" wx:if="{{files.length < 3}}">
+                                <view class="weui-uploader__input" bindtap="chooseImage"></view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+     <view class="page__bd">
+        <view class="weui-cells">
+            <view class="weui-cell">
+                <view class="weui-cell__bd">
+                  <input bindinput="bindInput" placeholder="请填写地址" focus="true" />
+                </view>
+            </view>
+        </view>
+    </view>
+    <button class="weui-btn submit" type="warn" form-type="submit">下一步</button>
+  </form>
+</view>

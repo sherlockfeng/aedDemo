@@ -1,0 +1,18 @@
+page{
+    background: #e8e8e8;
+}
+
+.panel {
+    margin: 20px;
+    background-color: #fff;
+}
+
+.line {
+    height: 20px;
+    background: #e8e8e8;
+    border-bottom: none
+}
+
+.weui-form-preview {
+    border-bottom: none
+}

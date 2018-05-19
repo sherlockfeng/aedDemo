@@ -201,6 +201,10 @@ Page({
       this.setData({
         pageBackgroundColor1: 'grey'
       })
+    }else {
+      this.setData({
+        pageBackgroundColor1: '#4D8AD7'
+      })
     }
     this.showMarkerInfo(marker);
     this.changeMarkerColor(markerId);
@@ -251,7 +255,7 @@ Page({
       })
     }else {
       wx.showToast({
-        title: '暂无电话',
+        title: '该地址暂无电话',
         icon: 'none',
         duration: 2000
       })
@@ -298,7 +302,6 @@ Page({
     imgArr = imgArr.map((value, index)=>{
       return this.data.host+"/images/"+this.data.selectMark._id+"/"+value
     })
-    console.log(imgArr)
     wx.previewImage({
       current: imgArr[index],     //当前图片地址
       urls: imgArr,               //所有要预览的图片的地址集合 数组形式

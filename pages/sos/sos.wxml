@@ -1,0 +1,2 @@
+<view class="anbulence" bindtap="callAn">一键拨打120</view>
+<view class="upload" bindtap="jumpToSecure">发布救援</view>

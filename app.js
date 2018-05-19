@@ -4,8 +4,8 @@ App({
   globalData:{    
     wxuserInfo: null,    
     uid: null,
-    host: 'https://heyunf.com',
-    // host: 'http://localhost:3000',
+    // host: 'https://heyunf.com',
+    host: 'http://localhost:3000',
     userInfo: {}
   },  
   onLaunch() {
@@ -28,7 +28,8 @@ App({
           }
         }
       })
-      return;
+    }else {
+      this.register()
     }
   },
 
@@ -44,11 +45,9 @@ App({
           method: "POST",
           data:  { code: res.code },  
           success:(result) => {
-            wx.setStorageSync({
-              key:"aedUid",
-              data: result.data.data[0].uid
-            })
+            wx.setStorageSync("aedUid", result.data.data[0].uid)
             that.globalData.userInfo = result.data.data[0]
+            that.globalData.uid = result.data.data[0].uid
           }
         })
       }

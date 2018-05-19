@@ -1,0 +1,23 @@
+.anbulence {
+    width: 90%;
+    margin-left: 5%;
+    height: 40px;
+    color: #fff;
+    background-color: #0e7e12;
+    margin-top: 30px;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 40px;
+}
+
+.upload {
+    width: 90%;
+    margin-left: 5%;
+    height: 40px;
+    color: #fff;
+    background-color: #fb0d1c;
+    margin-top: 30px;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 40px;    
+}
