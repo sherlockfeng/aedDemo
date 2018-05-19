@@ -21,8 +21,10 @@ Page({
     controls: [],
     hasMap: false,
     pageBackgroundColor:'#4D8AD7',
+    pageBackgroundColor1:'#4D8AD7',
     systems:'',
-    selectMark:{}
+    selectMark: {},
+    host: app.globalData.host,
   },
   onLoad(e) {
     wechat.getSystemInfo()
@@ -34,7 +36,7 @@ Page({
               id: 0,
               position: {
                 left: 10,
-                top: result.windowHeight-150,
+                top: result.windowHeight-160,
                 width: 40,
                 height: 40
               },
@@ -80,7 +82,7 @@ Page({
           distance > 50 && (needFlase = true)
         }
         if(needFlase) {
-          let city = '上海'
+          let city = ''
           let name = '当前位置'
           let desc = '当前位置'
           this.setData({
@@ -90,7 +92,7 @@ Page({
             textData: { name, desc }
           })
           wx.request( {  
-            url: "https://heyunf.com/nearBy",  
+            url: this.data.host+"/nearBy",  
             header: {  
               "Content-Type": "application/x-www-form-urlencoded"  
             },  
@@ -113,7 +115,7 @@ Page({
                 name:'当前位置',
                 imglist:[]
               })
-              let markers = res.data.data;
+              let markers = res.data.data
               if(markers.length > 1){
                 markers.forEach((item, index) => {
                   if(index !==markers.length - 1){
@@ -139,7 +141,16 @@ Page({
                 }
                 this.setData({ markers,selectMark: markers[0],pageBackgroundColor:'#4D8AD7'});
                 console.log(markers[0])
-                this.showMarkerInfo(markers[0]);
+                this.showMarkerInfo(markers[0])
+                if(!markers[0].phone) {
+                  this.setData({
+                    pageBackgroundColor1:'grey'
+                  })
+                }else{
+                  this.setData({
+                    pageBackgroundColor1:'#4D8AD7'
+                  })
+                }
                 this.changeMarkerColor(0);
               }else{
                 this.showMarkerInfo({
@@ -158,6 +169,9 @@ Page({
             }
           }) 
         }
+      },
+      fail: () => {
+        wx.openSetting({success:(res)=>{console.log(res);}});
       }
     })
   },
@@ -183,13 +197,18 @@ Page({
     this.setData({
       selectMark: marker
     })
+    if(!marker.phone) {
+      this.setData({
+        pageBackgroundColor1: 'grey'
+      })
+    }
     this.showMarkerInfo(marker);
     this.changeMarkerColor(markerId);
   },
   showMarkerInfo(data) {
-    let { name, address: desc } = data;
+    let { name, address: desc, phone } = data;
     this.setData({
-      textData: { name, desc }
+      textData: { name, desc, phone }
     })
   },
   changeMarkerColor(markerId) {
@@ -215,14 +234,28 @@ Page({
     // 终点
     let { latitude: latitude2, longitude: longitude2 } = markers[markerId]
     clearInterval(inId)
-    // wx.openLocation({
-    //   latitude: +latitude2,
-    //   longitude: +longitude2,
-    //   name,
-    //   address: desc
-    // });
-    let url = `/pages/routes/routes?longitude=${longitude}&latitude=${latitude}&longitude2=${longitude2}&latitude2=${latitude2}&city=${city}&name=${name}&desc=${desc}`;
-    wx.navigateTo({ url });
+    wx.openLocation({
+      latitude: +latitude2,
+      longitude: +longitude2,
+      name,
+      address: desc
+    });
+    // let url = `/pages/routes/routes?longitude=${longitude}&latitude=${latitude}&longitude2=${longitude2}&latitude2=${latitude2}&city=${city}&name=${name}&desc=${desc}`;
+    // wx.navigateTo({ url });
+  },
+  callPhone() {
+    let { phone } = this.data.markers[this.data.markerId]
+    if(phone) {
+      wx.makePhoneCall({
+        phoneNumber: phone //仅为示例，并非真实的电话号码
+      })
+    }else {
+      wx.showToast({
+        title: '暂无电话',
+        icon: 'none',
+        duration: 2000
+      })
+    }
   },
   clickcontrol(e) {
     console.log(e)
@@ -263,7 +296,7 @@ Page({
     var index = e.currentTarget.dataset.index;
     var imgArr = this.data.selectMark.imglist;
     imgArr = imgArr.map((value, index)=>{
-      return "https://heyunf.com/images/"+this.data.selectMark._id+"/"+value
+      return this.data.host+"/images/"+this.data.selectMark._id+"/"+value
     })
     console.log(imgArr)
     wx.previewImage({

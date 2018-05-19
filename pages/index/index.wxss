@@ -55,7 +55,7 @@ text{
   margin-top: 5px;
   width: 100rpx;
   height: 100rpx;
-  border-radius: 120rpx;
+  /* border-radius: 120rpx; */
   background-color: #4D8AD7;
   display: flex;
   flex-direction: column;
@@ -102,4 +102,37 @@ text{
   left: 0;
   right: 0;
   bottom: 50px;
+}
+
+.detail_button{
+  margin-top: 35px;
+  width: 100rpx;
+  height: 40rpx;
+  border-radius: 10rpx;
+  background-color: #4D8AD7;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color:#ffffff;
+  font-size: 24rpx;
+  position: absolute;
+  top:0rpx;
+  right: 60rpx;
+}
+.detail_button2{
+  margin-top: 5px;
+  width: 100rpx;
+  height: 40rpx;
+  border-radius: 10rpx;
+  background-color: #4D8AD7;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color:#ffffff;
+  font-size: 24rpx;
+  position: absolute;
+  top:0 rpx;
+  right: 60rpx;
 }
