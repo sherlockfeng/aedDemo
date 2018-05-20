@@ -5,11 +5,12 @@ App({
     wxuserInfo: null,    
     uid: null,
     // host: 'https://heyunf.com',
-    host: 'http://localhost:3000',
+    host: 'http://localhost:3001',
     userInfo: {}
   },  
   onLaunch() {
     this.login()
+    this.register()
   },
   login() {
     let that = this
@@ -28,8 +29,6 @@ App({
           }
         }
       })
-    }else {
-      this.register()
     }
   },
 

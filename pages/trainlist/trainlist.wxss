@@ -1,0 +1,37 @@
+page{
+    background: #e8e8e8;
+}
+
+.title {
+    margin: 40px auto;
+    text-align: center;
+    font-size: 20px;
+}
+
+.panel {
+    width: 90%;
+    margin-left: 5%;
+    background-color: #fff;
+    display: flex;
+    height: 50px;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.name {
+    font-size: 14px;
+    margin-left: 20px;
+}
+
+.button {
+    height: 22px;
+    background-color: red;
+    color: #fff;
+    text-align: center;
+    line-height: 22px;
+    border-radius: 10px;
+    font-size: 14px;
+    margin-right: 20px;
+    width: 60px;
+}

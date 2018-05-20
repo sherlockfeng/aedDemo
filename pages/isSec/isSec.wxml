@@ -1,0 +1,36 @@
+<view class='info-title'>
+    提交信息
+</view>
+
+
+<view class='panel'>
+    <view class="first line ">
+        <view class="title">姓名</view>
+        <view class="content">
+            <input class="weui-input" bindinput="input" data-name="name" placeholder="请填写姓名"/>
+        </view>
+    </view>
+    <view class="line">
+        <view class="title">身份证号码</view>
+        <view class="content">
+            <input class="weui-input" bindinput="input" data-name="id" placeholder="请填写身份证号码"/>
+        </view>
+    </view>
+    <view class="line">
+        <view class="title">急救员证书号码</view>
+        <view class="content">
+            <input class="weui-input" bindinput="input" data-name="seId" placeholder="请填写急救员证书号码"/>
+        </view>
+    </view>
+    <view class="line">
+        <view class="title">发证单位</view>
+        <view class="content phone">
+            <input class="weui-input" disabled="true"  value="{{company}}" placeholder="请选择发证单位"/>
+            <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+                <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+            </picker>
+        </view>
+    </view>
+</view>
+
+<button class="weui-btn button" bindtap="submit" type="warn">提交</button>

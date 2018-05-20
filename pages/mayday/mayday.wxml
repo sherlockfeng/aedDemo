@@ -19,7 +19,7 @@
         </view>
     </view>
     <view class="weui-form-preview__ft">
-        <navigator url="" class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active">响应</navigator>
+        <view bindtap="handleSec"  data-value="{{index}}" class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active">响应</view>
     </view>
     <view class='line'></view>
   </block>

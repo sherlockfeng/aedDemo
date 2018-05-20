@@ -1,0 +1,10 @@
+<icon type="warn" size="93" class="icons"></icon>
+<view class="title">
+    您尚未通过急救员审核
+</view>
+<view class="isSe" bindtap="jumpTo" data-value='isSec'>
+    我是急救员
+</view>
+<view class="notSe" bindtap="jumpTo" data-value='trainlist'>
+    成为急救员
+</view>

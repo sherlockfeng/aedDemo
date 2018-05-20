@@ -73,7 +73,7 @@ Page({
               }
               let data = {
                 uid: app.globalData.uid,
-                phone: app.globalData.phone || '',
+                phone: app.globalData.userInfo.phone || '',
                 secId: util.guid(),
                 address: that.data.address,
                 imgList: fileName,

@@ -1,0 +1,12 @@
+
+<view class="title">请尽快前往目的地</view>
+<view class="weui-cells weui-cells_after-title panel">
+    <view class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <view class="weui-cell__bd">目的地</view>
+        <view class="weui-cell__ft">{{destination}}</view>
+    </view>
+    <view class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <view class="weui-cell__bd">联系电话</view>
+        <view class="weui-cell__ft">{{phone}}</view>
+    </view>
+</view>

@@ -1,0 +1,62 @@
+<view class='panel'>
+    <view class="first line ">
+        <view class="title">名称</view>
+        <view class="content">杭州红十字会201805期第一班</view>
+    </view>
+    <view class="line">
+        <view class="title">时间</view>
+        <view class="content">2018年5月</view>
+    </view>
+    <view class="line">
+        <view class="title">地点</view>
+        <view class="content">浙江省红十字会（秋涛北路324号）</view>
+    </view>
+    <view class="line">
+        <view class="title">详细内容</view>
+        <view class="content">急救培训</view>
+    </view>
+    <view class="line">
+        <view class="title">培训人数</view>
+        <view class="content">30</view>
+    </view>
+    <view class="line">
+        <view class="title">已报名人数</view>
+        <view class="content">12</view>
+    </view>
+</view>
+
+<view class='info-title'>
+    提交个人信息
+</view>
+
+<view class='panel'>
+    <view class="first line ">
+        <view class="title">姓名</view>
+        <view class="content">
+            <input class="weui-input" bindinput="input" data-name="name" placeholder="请填写姓名"/>
+        </view>
+    </view>
+    <view class="line">
+        <view class="title">身份证号码</view>
+        <view class="content">
+            <input class="weui-input" bindinput="input" data-name="id" placeholder="请填写身份证号码"/>
+        </view>
+    </view>
+    <view class="line">
+        <view class="title">手机号</view>
+        <view class="content phone">
+            <input class="weui-input" bindinput="input" data-name="phone" placeholder="请填写手机号"/>
+            <view class="tips" style="background-color:{{btnBac}}" bindtap="getMsg">{{msgTip}}</view>
+        </view>
+    </view>
+    <view class="line">
+        <view class="title">验证码</view>
+        <view class="content">
+            <view class="weui-cell__bd">
+                <input class="weui-input" bindinput="input" data-name="verify" placeholder="请填写验证码" />
+            </view>
+        </view>
+    </view>
+</view>
+
+<button class="weui-btn button" bindtap="submit" type="warn">提交</button>

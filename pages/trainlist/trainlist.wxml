@@ -1,0 +1,7 @@
+<view class="title">
+    近期培训
+</view>
+<view class="panel">
+    <view class="name">杭州红十字会201805期第一班</view>
+    <view class='button' bindtap="jumpTo">报名</view>
+</view>

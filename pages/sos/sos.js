@@ -25,7 +25,7 @@ Page({
         success(res) {
             console.log(res);
             if (res.confirm) {
-                wx.navigateTo({url:'/pages/secure/secure'})  
+                wx.navigateTo({url:'/pages/phone/phone'})  
             }else{
                 // console.log('用户点击辅助操作')
             }

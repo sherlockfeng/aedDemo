@@ -8,7 +8,13 @@
     "pages/my/my",
     "pages/sos/sos",
     "pages/mayday/mayday",
-    "pages/secure/secure"
+    "pages/secure/secure",
+    "pages/notSec/notSec",
+    "pages/trainlist/trainlist",
+    "pages/sign/sign",
+    "pages/phone/phone",
+    "pages/isSec/isSec",
+    "pages/go/go"
   ],
   "window": {
     "backgroundTextStyle": "light",

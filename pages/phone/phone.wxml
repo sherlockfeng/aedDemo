@@ -1,0 +1,33 @@
+<view class='panel'>
+    <view class="first line" wx:if='{{!initphone}}'>
+        <view class="title">手机号</view>
+        <view class="content phone">
+            <input class="weui-input" bindinput="input" data-name="phone" value="{{initphone}}" placeholder="请填写手机号"/>
+            <view class="tips" style="background-color:{{btnBac}}" bindtap="getMsg">{{msgTip}}</view>
+        </view>
+    </view>
+    <view class="first line" wx:if='{{initphone}}'>
+        <view class="title">原手机号</view>
+        <view class="content phone">
+            <input class="weui-input" disabled="true" value="{{initphone}}" placeholder="请填写手机号"/>
+            <view class="tips"></view>
+        </view>
+    </view>
+    <view class="first line" wx:if='{{initphone}}'>
+        <view class="title">新手机号</view>
+        <view class="content phone">
+            <input class="weui-input" bindinput="input" data-name="phone" placeholder="请填写手机号"/>
+            <view class="tips" style="background-color:{{btnBac}}" bindtap="getMsg">{{msgTip}}</view>
+        </view>
+    </view>
+    <view class="line">
+        <view class="title">验证码</view>
+        <view class="content">
+            <view class="weui-cell__bd">
+                <input class="weui-input" bindinput="input" data-name="verify" placeholder="请填写验证码" />
+            </view>
+        </view>
+    </view>
+</view>
+
+<button class="weui-btn button" bindtap="submit" type="warn">提交</button>

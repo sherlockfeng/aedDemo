@@ -1,10 +1,14 @@
-<view class="weui-cells weui-cells_after-title">
-    <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+<view class="weui-cells weui-cells_after-title panel">
+    <navigator url="/pages/isSec/isSec" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <view class="weui-cell__bd">我是急救员</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </navigator>
+    <navigator url="/pages/trainlist/trainlist" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <view class="weui-cell__bd">成为急救员</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </navigator>
+    <navigator url="/pages/phone/phone" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
         <view class="weui-cell__bd">绑定手机</view>
         <view class="weui-cell__ft weui-cell__ft_in-access">{{userinfo.phone}}</view>
-    </navigator>
-    <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
-        <view class="weui-cell__bd">关于我们</view>
-        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
     </navigator>
 </view>
