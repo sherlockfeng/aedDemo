@@ -5,7 +5,8 @@ App({
     wxuserInfo: null,    
     uid: null,
     // host: 'https://heyunf.com',
-    host: 'http://localhost:3001',
+    // host: 'http://localhost:3001',
+    host: 'https://www.hzhtyl.com',
     userInfo: {}
   },  
   onLaunch() {
